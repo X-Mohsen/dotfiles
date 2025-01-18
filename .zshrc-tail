@@ -1,0 +1,28 @@
+# Custom settings added by X-Mohsen
+
+# Function to copy a file's content to the clipboard
+DEFAULT_FILE_PATH="/home/mohsen/Public/token"
+
+xcopy() {
+  local file="${1:-$DEFAULT_FILE_PATH}"  # Use the provided file, or fallback to the default
+  if [[ -f "$file" ]]; then
+    xclip -selection clipboard < "$file"
+    echo "Contents of $file copied to clipboard." | lolcat
+  else
+    echo "File $file does not exist." | lolcat
+  fi
+}
+
+# This function cleans any env-vars about proxy settings  
+xclean() {
+	unset all_proxy
+	unset ALL_PROXY
+	unset no_proxy
+	unset NO_PROXY
+	unset ftp_proxy
+	unset FTP_PROXY
+	unset http_proxy
+	unset HTTP_PROXY
+	unset https_proxy
+	unset HTTPS_PROXY	
+}
