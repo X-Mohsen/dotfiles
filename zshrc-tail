@@ -1,28 +1,29 @@
-# Custom settings added by X-Mohsen
+# ────────────────────────────────────────────────────────────────
+# Custom Zsh Functions & Settings - maintained by X-Mohsen
+# Source this file from ~/.zshrc to extend shell capabilities
+# ────────────────────────────────────────────────────────────────
 
-# Function to copy a file's content to the clipboard
-DEFAULT_FILE_PATH="/home/mohsen/Public/token"
+# Default file path used when no argument is passed to xcopy
+DEFAULT_FILE_PATH="$HOME/Public/token"
 
+# Function: Copy the content of a file to the clipboard
 xcopy() {
-  local file="${1:-$DEFAULT_FILE_PATH}"  # Use the provided file, or fallback to the default
+  local file="${1:-$DEFAULT_FILE_PATH}"  # Use provided file or fallback
+
   if [[ -f "$file" ]]; then
     xclip -selection clipboard < "$file"
-    echo "Contents of $file copied to clipboard." | lolcat
+    echo "Copied contents of '$file' to clipboard."
   else
-    echo "File $file does not exist." | lolcat
+    echo "Error: File '$file' does not exist."
   fi
 }
 
-# This function cleans any env-vars about proxy settings  
+# Function: Clear all proxy-related environment variables
 xclean() {
-	unset all_proxy
-	unset ALL_PROXY
-	unset no_proxy
-	unset NO_PROXY
-	unset ftp_proxy
-	unset FTP_PROXY
-	unset http_proxy
-	unset HTTP_PROXY
-	unset https_proxy
-	unset HTTPS_PROXY	
+  unset all_proxy ALL_PROXY
+  unset no_proxy NO_PROXY
+  unset ftp_proxy FTP_PROXY
+  unset http_proxy HTTP_PROXY
+  unset https_proxy HTTPS_PROXY
+  echo "Proxy environment variables cleared."
 }
