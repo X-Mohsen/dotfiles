@@ -1,11 +1,11 @@
 A minimal set of personal configurations.
 
-## 🔧 Includes
+#### 🔧 Includes
 
 - Tail section of `.zshrc` with custom Zsh functions
 - Full `.vimrc` configuration
 
-## 📦 Installation
+#### 📦 Installation
 
 1. Clone the repo:
 
