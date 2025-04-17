@@ -1,5 +1,3 @@
-# dotfiles
-
 A minimal set of personal configurations.
 
 ## 🔧 Includes
